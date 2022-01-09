@@ -20,12 +20,10 @@ export const sleep = (time: number) => {
     setTimeout(resolve, time)
   })
 }
-export const randomStr = (len: number = 11) => {
-  let result = ''
-  let chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
-  let charsLen = chars.length
-  for (let i = 0; i < len; i++) {
-    result += chars.charAt(Math.floor(Math.random() * charsLen))
+export const randomStr = (len: number = 23) => {
+  let str = Math.random().toString(36).substring(2, 15)
+  while (str.length < len) {
+    str += Math.random().toString(36).substring(2, 15)
   }
-  return result
+  return str.slice(0, len)
 }
