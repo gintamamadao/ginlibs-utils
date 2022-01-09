@@ -20,3 +20,12 @@ export const sleep = (time: number) => {
     setTimeout(resolve, time)
   })
 }
+export const randomStr = (len: number = 11) => {
+  let result = ''
+  let chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+  let charsLen = chars.length
+  for (let i = 0; i < len; i++) {
+    result += chars.charAt(Math.floor(Math.random() * charsLen))
+  }
+  return result
+}
